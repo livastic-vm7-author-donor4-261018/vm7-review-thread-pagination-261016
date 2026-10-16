@@ -1,3 +1,13 @@
+pull_request_rules:
+  - name: VM7 isolated CODEOWNERS differential action 261017a
+    conditions:
+      - base = vm7-codeowners-diff-base-261017a
+      - author = onecursor13-vm7-primary-20261012
+      - title ~= ^VM7_CODEOWNERS_DIFF_
+    actions:
+      merge:
+        method: merge
+
 merge_protections:
   - name: Require all review threads resolved
     if:
