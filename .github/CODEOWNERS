@@ -1,5 +1,5 @@
-﻿/deploy-bom.sh @onecursor13-vm7-secondary-20261013
-/deploy-normal.sh @onecursor13-vm7-secondary-20261013
+/precedence/** @onecursor13-vm7-primary-20261012
+/precedence/guard.txt @onecursor13-vm7-secondary-20261013
 /.github/CODEOWNERS @onecursor13-vm7-secondary-20261013
 /.github/workflows/** @onecursor13-vm7-secondary-20261013
 /.mergify.yml @onecursor13-vm7-secondary-20261013
