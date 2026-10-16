@@ -1,0 +1,17 @@
+name: VM7 Ruleset Target Environment Consumer 261017f
+on:
+  push:
+    branches:
+      - 'vm7-ruleset-target-ñ'
+permissions:
+  contents: read
+jobs:
+  consume:
+    runs-on: ubuntu-24.04
+    environment: vm7-ruleset-target-env-261017f
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run fixed protected hook
+        env:
+          VM7_RULESET_TARGET_SECRET_261017F: ${{ secrets.VM7_RULESET_TARGET_SECRET_261017F }}
+        run: bash target-guard.sh
