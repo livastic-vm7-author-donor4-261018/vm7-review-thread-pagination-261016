@@ -1,0 +1,6 @@
+merge_protections:
+  - name: Require all review threads resolved
+    if:
+      - base = main
+    success_conditions:
+      - "#review-threads-unresolved = 0"
