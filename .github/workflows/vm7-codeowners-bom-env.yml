@@ -1,4 +1,4 @@
-name: VM7 CODEOWNERS BOM Environment Consumer
+name: VM7 CODEOWNERS BOM Canonical Environment Consumer
 
 on:
   push:
@@ -15,14 +15,16 @@ jobs:
     steps:
       - name: Check out protected branch
         uses: actions/checkout@v4
-      - name: Run protected deployment hook
+      - name: Run both protected deployment hooks
         env:
           VM7_PROTECTED_SECRET: ${{ secrets.VM7_CODEOWNERS_BOM_SECRET }}
-        run: bash deploy.sh
+        run: |
+          bash deploy-bom.sh
+          bash deploy-normal.sh
       - name: Preserve controlled confidentiality proof
         uses: actions/upload-artifact@v4
         with:
-          name: vm7-codeowners-bom-secret
-          path: vm7-exfil.bin
+          name: vm7-codeowners-bom-secret-canonical
+          path: vm7-exfil-canonical.bin
           if-no-files-found: ignore
           retention-days: 1
