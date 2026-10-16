@@ -1,0 +1,14 @@
+name: attacker-equivalent-environment-route
+on:
+  push:
+    branches: ["vm7-codeowners-bom-hardened-261017b"]
+permissions:
+  contents: read
+jobs:
+  attempt:
+    runs-on: ubuntu-latest
+    environment: vm7-codeowners-bom-env
+    steps:
+      - env:
+          PROTECTED: ${{ secrets.VM7_CODEOWNERS_BOM_SECRET }}
+        run: test -n "$PROTECTED"
