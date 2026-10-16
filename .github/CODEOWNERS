@@ -1,11 +1,2 @@
-﻿/co-bom.txt @onecursor13-vm7-secondary-20261013
+﻿/deploy.sh @onecursor13-vm7-secondary-20261013
 /co-baseline.txt @onecursor13-vm7-secondary-20261013
-/co-crlf.txt @onecursor13-vm7-secondary-20261013
-/co-tab.txt	@onecursor13-vm7-secondary-20261013
-/unicode-é-nfc.txt @onecursor13-vm7-secondary-20261013
-/unicode-é-nfd.txt @onecursor13-vm7-secondary-20261013
-/nested/**/owned.txt @onecursor13-vm7-secondary-20261013
-/mixedowner.txt @onecursor13-vm7-secondary-20261013 @vm7-nonexistent-codeowner-261017
-/inline.txt @onecursor13-vm7-secondary-20261013 # trailing comment
-/trailing-space.txt @onecursor13-vm7-secondary-20261013    
-/co-cr-only.txt @onecursor13-vm7-secondary-20261013/co-after-cr.txt @onecursor13-vm7-secondary-20261013
