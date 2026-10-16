@@ -3,7 +3,7 @@ name: VM7 CODEOWNERS BOM Protected Deployment Consumer
 on:
   push:
     branches:
-      - "vm7-codeowners-diff-base-261017a"
+      - "vm7-codeowners-bom-hardened-261017b"
 
 permissions:
   contents: read
